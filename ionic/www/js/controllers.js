@@ -46,10 +46,6 @@ angular.module('starter.controllers', [])
 
 .controller('BLEDetailCtrl', function($scope, $stateParams, $log, $ionicPopup, BLE) {
   $scope.device = null;
-  $scope.servo = 0;
-  $scope.changeServo = function(newVal){
-    writeToDevice("2",newVal.toString());
-  };
 
   BLE.connect($stateParams.deviceId).then(
       function(peripheral) {
